@@ -13,6 +13,6 @@ else
   PRIV_T_F=false
 fi
 
-curl -u $USERNAME:$PASSWORD https://api.github.com/user/repos  -d "{\"name\":\"$REPO_NAME\", \"description\":\"$REPO_DESC\", \"private\":\"$PRIV_T_F\"}"
+curl -u $USERNAME:$PASSWORD https://api.github.com/user/repos  -d "{\"name\":\"$REPO_NAME\", \"description\":\"$REPO_DESC\", \"private\":$PRIV_T_F}"
 git remote add origin https://github.com/$USERNAME/$REPO_NAME.git
 git push -u origin master
